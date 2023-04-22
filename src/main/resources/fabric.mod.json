@@ -1,0 +1,37 @@
+{
+	"schemaVersion": 1,
+	"id": "enchantmentfix",
+	"version": "${version}",
+	"name": "EnchantmentFix",
+	"description": "A small Minecraft mod which tweaks the compatibility of some vanilla enchantments!",
+	"authors": [
+		"RDM Studios"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/RDM-Studios/EnchantmentFix/issues"
+	},
+	"license": "MIT",
+	"icon": "assets/enchantmentfix/enchantment_fix_icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.rdm.enchantmentfix.EnchantmentFix"
+		],
+		"fabric-datagen": [
+			"com.rdm.enchantmentfix.EnchantmentFixDataGenerator"
+		]
+	},
+	"mixins": [
+		"enchantmentfix.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.14.19",
+		"minecraft": "~1.19.4",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
