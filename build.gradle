@@ -74,7 +74,7 @@ dependencies {
 
 	// Libraries
 	modImplementation("net.fabricmc:fabric-loader:${project.fabric_loader_version}")
-	modImplementation("net.fabricmc.fabric-api:fabric-api:${project.fabric_version}")
+//	modImplementation("net.fabricmc.fabric-api:fabric-api:${project.fabric_version}")
 
 	// Extras
   	modCompileOnlyApi("mezz.jei:jei-${minecraft_version}-common-api:${jei_version}")
