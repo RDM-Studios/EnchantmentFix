@@ -3,7 +3,12 @@
 	"package": "com.rdm.enchantmentfix.mixins",
 	"compatibilityLevel": "JAVA_17",
 	"mixins": [
-		"ExampleMixin"
+		"AnvilScreenHandlerMixin",
+		"InfinityEnchantmentMixin",
+		"ProtectionEnchantmentMixin"
+	],
+	"client": [
+		"AnvilScreenMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

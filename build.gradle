@@ -35,25 +35,36 @@ sourceSets {
 }
 
 repositories {
-  maven {
-    name = "CurseMaven"
-    url "https://www.cursemaven.com"
-    content {
-        includeGroup "curse.maven"
+	maven {
+    	name = "CurseMaven"
+    	url "https://www.cursemaven.com"
+    	content {
+        	includeGroup "curse.maven"
+    	}
+  	}
+    exclusiveContent {
+        forRepository {
+            maven {
+                name = "Modrinth"
+                url = "https://api.modrinth.com/maven"
+            }
+        }
+        filter {
+            includeGroup "maven.modrinth"
+        }
     }
-  }
-  maven {
-    name = "Progwml6's maven"
-    url = "https://dvs1.progwml6.com/files/maven/"
-  }
-  maven {
-    name = "Jared's maven"
-    url = "https://maven.blamejared.com/"
-  }
-  maven {
-    name = "ModMaven"
-    url = "https://modmaven.dev"
-  }
+    maven {
+        name = "Modrinth Maven"
+        url = "https://api.modrinth.com/maven"
+    }
+  	maven {
+    	name = "Progwml6's maven"
+    	url = "https://dvs1.progwml6.com/files/maven/"
+  	}
+  	maven {
+    	name = "Jared's maven"
+    	url = "https://maven.blamejared.com/"
+  	}
 }
 
 dependencies {
@@ -69,9 +80,13 @@ dependencies {
   	modCompileOnlyApi("mezz.jei:jei-${minecraft_version}-common-api:${jei_version}")
   	modCompileOnlyApi("mezz.jei:jei-${minecraft_version}-fabric-api:${jei_version}")
   	modRuntimeOnly("mezz.jei:jei-${minecraft_version}-fabric:${jei_version}")
+  	
+  	modImplementation("maven.modrinth:modmenu:${modmenu_version}")
 
 	modImplementation("curse.maven:jade-324717:${jade_version}")
-	modImplementation("curse.maven:enchantment-descriptions-250419:${enchantment_descriptions_version}")
+	
+//	modImplementation("net.darkhax.bookshelf:Bookshelf-Fabric-${minecraft_version}:${bookshelf_version}")
+//	modImplementation("curse.maven:enchantment-descriptions-250419:${enchantment_descriptions_version}")
 }
 
 processResources {
